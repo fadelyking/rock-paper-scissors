@@ -15,19 +15,18 @@ function getComputerChoice() {
 }
 
 
-
     function game() {
         let userText = prompt("Rock, Paper, Scissors?");
-        const playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
+        let playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
         let computerSelection = getComputerChoice();
         let aiScore = 0;
         let humanScore = 0;
-        let winIndicator = 0;
+
 
         function playRound(playerSelection, computerSelection) {
         if (computerSelection === playerSelection) {
             console.log(`Tie !`)
-            return 0
+            return 0;
              
             
     
@@ -35,55 +34,41 @@ function getComputerChoice() {
         (computerSelection === "Paper" && playerSelection === "Rock") || 
         (computerSelection === "Scissors" && playerSelection === "Paper")) {
             console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
-            return 1;
+            return aiScore++;
         }  
         
         else if ((playerSelection === "Rock" && computerSelection === "Scissors") || 
         (playerSelection === "Paper" && computerSelection === "Rock") || 
         (playerSelection === "Scissors" && computerSelection === "Paper")) {
             console.log(`You win! ${playerSelection} beats ${computerSelection}`)
-            return 2;
+            return humanScore++;
         } 
     }
-const result = playRound();
-   if (result === 1) {
-    aiScore++;
-   } else if (result === 2) {
-    humanScore++;
-   } 
-    userText = prompt("Rock, Paper, Scissors?");
-    computerSelection = getComputerChoice();
+    
 
     playRound(playerSelection, computerSelection);
-    if (result === 1) {
-        aiScore++;
-       } else if (result === 2) {
-        humanScore++;
-       } 
     userText = prompt("Rock, Paper, Scissors?");
+    playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-    if (result === 1) {
-        aiScore++;
-       } else if (result === 2) {
-        humanScore++;
-       } 
     userText = prompt("Rock, Paper, Scissors?");
+    playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-    if (result === 1) {
-        aiScore++;
-       } else if (result === 2) {
-        humanScore++;
-       } 
     userText = prompt("Rock, Paper, Scissors?");
+    playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-    if (result === 1) {
-        aiScore++;
-       } else if (result === 2) {
-        humanScore++;
-       } 
+    userText = prompt("Rock, Paper, Scissors?");
+    playerSelection = userText.charAt(0).toUpperCase() + userText.slice(1).toLowerCase();
+    computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+
+    if (humanScore > aiScore) {
+        return console.log("You are the winner!")
+    } else if (aiScore > humanScore) {
+        return console.log("Ai Wins")
+    }
 
     }
 
